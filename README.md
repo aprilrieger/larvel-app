@@ -16,7 +16,7 @@
 ** helpful documentation if on Windows or Linux:
 https://kinsta.com/knowledgebase/install-laravel/#how-to-install-laravel-on-macos:
 
-``````
+```
 brew install docker
 brew install composer
 brew install php
