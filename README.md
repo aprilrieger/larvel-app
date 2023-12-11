@@ -11,7 +11,7 @@
 - Composer
 - Node.js
 
-## How to directions on a Mac
+## How-to directions on a Mac
 
 ** helpful documentation if on Windows or Linux:
 https://kinsta.com/knowledgebase/install-laravel/#how-to-install-laravel-on-macos:
@@ -19,10 +19,10 @@ https://kinsta.com/knowledgebase/install-laravel/#how-to-install-laravel-on-maco
 ```
 brew install docker
 brew install composer
-brew install php
+brew install php@8.2
 composer global require laravel/installer
-composer create-project --prefer-dist laravel/laravel app-name
-cd app-name
+composer create-project --prefer-dist laravel/laravel laravel-app
+cd laravel-app
 php artisan serve
 ```
 
@@ -33,15 +33,21 @@ Now that we were able to see the dependancies necessary to get this application 
 How to dockerize the application now:
 Helpful video: https://www.youtube.com/watch?v=uYhowDSkwyk
 
-# Working the stack
+# Working twith the stack in Docker
+```
+git clone git@github.com:aprilrieger/larvel-app.git
+cd laravel-app
+cp .env.example .env
+```
 
-Note: All common environment variables located in the .env
+After copying the .env.example file set these:
+DB_HOST=db
+DB_PASSWORD=CHANGEME
 
-## Build the docker image on your machine:
-`docker compose build`
+```
+composer install
+docker compose build
+docker compose up -d
+```
 
-## Bring the stack up locally with:
-`docker compose up -d`
-
-## Got to your perferred browser
-Navigate to http://localhost:8000/
+Navigate to browser: http://localhost:8000/
